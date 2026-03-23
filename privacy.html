@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Privacy Policy</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — OutreachGo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Syne:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --void: #080910; --deep: #0e1018;
+      --glass: rgba(255,255,255,.035); --glass-border: rgba(255,255,255,.075);
+      --text: #e8e8ee; --text-muted: #7a7a96; --text-faint: #3e3e58;
+      --gold: #c9a84c; --gold-light: #e8ca78; --gold-dim: rgba(201,168,76,.1);
+      --radius: 16px; --transition: 0.22s ease;
+      --font-display: 'Playfair Display', serif; --font-body: 'Syne', sans-serif;
+    }
+    html { background: var(--void); }
+    body { font-family: var(--font-body); background: var(--void); color: var(--text); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 68px; background: rgba(8,9,16,.75); backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); text-decoration: none; }
+    .nav-logo em { font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--text); }
+    .prose-wrap { max-width: 680px; margin: 0 auto; padding: 5rem clamp(1.5rem, 5vw, 4rem) 6rem; }
+    .kicker { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: var(--text); margin-bottom: .75rem; }
+    h1 em { font-style: italic; color: var(--gold); }
+    .effective { font-size: .8rem; color: var(--text-faint); margin-bottom: 3rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 2rem; }
+    h2 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 .75rem; }
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    ul { color: var(--text-muted); margin: .5rem 0 1rem 1.25rem; }
+    ul li { margin-bottom: .35rem; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+    .section-box { background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .section-box p { margin: 0; }
+    footer { background: var(--deep); border-top: 1px solid var(--glass-border); padding: 2rem clamp(1.5rem, 5vw, 4rem); text-align: center; font-size: .78rem; color: var(--text-faint); }
+    footer a { color: var(--text-faint); margin: 0 .65rem; transition: color var(--transition); }
+    footer a:hover { color: var(--text-muted); }
+  </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>This application (OutreachLegale Integration) respects your privacy.</p>
-    <p>We do not sell, share, or misuse any user data. Any data collected is only used to provide functionality inside the app.</p>
+<nav>
+  <a href="/" class="nav-logo">Outreach<em>Go</em></a>
+  <ul class="nav-links">
+    <li><a href="/offers">Offers</a></li>
+    <li><a href="/disclosure">Disclosure</a></li>
+  </ul>
+</nav>
+
+<div class="prose-wrap">
+  <div class="kicker">Legal</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="effective">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: January 1, 2025</p>
+
+  <h2>1. Who We Are</h2>
+  <p>OutreachGo ("we," "us," "our") operates the website outreachgo.net and associated tracking subdomain go.outreachgo.net. We are an independently operated affiliate marketing platform.</p>
+
+  <h2>2. What Data We Collect</h2>
+  <p>When you visit our site or click a tracked link, we may collect:</p>
+  <ul>
+    <li>Click events (which offer link was clicked, timestamp)</li>
+    <li>Referral parameters and tracking identifiers (TIDs)</li>
+    <li>Approximate geographic region (country/region level, not precise location)</li>
+    <li>Browser type and device type (for analytics purposes)</li>
+    <li>IP address (temporarily, for security and fraud prevention)</li>
+  </ul>
+  <p>We do <strong style="color:var(--text)">not</strong> collect names, email addresses, or payment information. We do not require any account creation.</p>
+
+  <h2>3. How We Use Data</h2>
+  <p>Collected data is used to:</p>
+  <ul>
+    <li>Track affiliate click attribution for commission purposes</li>
+    <li>Improve our content and offer selection</li>
+    <li>Detect and prevent fraudulent activity</li>
+    <li>Understand aggregate traffic patterns</li>
+  </ul>
+  <p>We do not sell your data. We do not use your data for advertising targeting. We do not profile individual users.</p>
+
+  <h2>4. Third-Party Services</h2>
+  <p>When you click an offer link, you will be redirected to a third-party platform. That platform has its own privacy policy and data practices, which are independent of ours. We encourage you to review their policies before providing personal information.</p>
+  <p>We use Cloudflare Workers for link routing and tracking. Cloudflare may process request data as described in <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.</p>
+
+  <h2>5. Cookies & Tracking</h2>
+  <p>Our main website (outreachgo.net) uses minimal or no cookies. Our tracking subdomain (go.outreachgo.net) may set short-lived tracking parameters in the URL to attribute clicks to the correct affiliate campaign. No persistent advertising cookies are set by us.</p>
+
+  <h2>6. Data Retention</h2>
+  <p>Click event data is retained for analytics and commission attribution purposes. Anonymized aggregate data may be retained indefinitely. Individual click logs are retained for up to 12 months unless a shorter period is required by law.</p>
+
+  <h2>7. Your Rights</h2>
+  <p>Depending on your jurisdiction, you may have rights to:</p>
+  <ul>
+    <li>Request access to data we hold about you</li>
+    <li>Request deletion of your data</li>
+    <li>Object to certain processing activities</li>
+  </ul>
+  <p>To exercise these rights, visit our <a href="/delete-data">Data Deletion page</a>.</p>
+
+  <h2>8. Children's Privacy</h2>
+  <p>This website is not directed to children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Changes will be reflected by updating the "Last updated" date at the top of this page. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>10. Contact</h2>
+  <p>For privacy-related requests, please use our <a href="/delete-data">Data Deletion form</a>. For other inquiries, you may contact us via the domain registrar contact on record for outreachgo.net.</p>
+</div>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/offers">Offers</a>
+  <a href="/disclosure">Disclosure</a>
+  <a href="/delete-data">Delete Data</a>
+  <br/><br/>© 2025 OutreachGo — outreachgo.net
+</footer>
 </body>
 </html>
