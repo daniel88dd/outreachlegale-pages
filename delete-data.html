@@ -1,13 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Data Deletion Instructions</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete My Data — OutreachGo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --void: #080910; --deep: #0e1018; --layer: #13151f;
+      --glass: rgba(255,255,255,.035); --glass-border: rgba(255,255,255,.075);
+      --text: #e8e8ee; --text-muted: #7a7a96; --text-faint: #3e3e58;
+      --gold: #c9a84c; --gold-light: #e8ca78; --gold-dim: rgba(201,168,76,.1);
+      --radius: 16px; --transition: 0.22s ease;
+      --font-display: 'Playfair Display', serif; --font-body: 'Syne', sans-serif;
+    }
+    html { background: var(--void); }
+    body { font-family: var(--font-body); background: var(--void); color: var(--text); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 68px; background: rgba(8,9,16,.75); backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); text-decoration: none; }
+    .nav-logo em { font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--text); }
+
+    .page-wrap { max-width: 600px; margin: 0 auto; padding: 5rem clamp(1.5rem, 5vw, 4rem) 6rem; }
+    .kicker { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -.02em; line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+    h1 em { font-style: italic; color: var(--gold); }
+    .intro { font-size: .9375rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 3rem; }
+
+    .form-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 2rem; }
+    .field { margin-bottom: 1.5rem; }
+    .field label { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .5rem; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      background: var(--layer); border: 1px solid var(--glass-border);
+      border-radius: var(--radius); padding: .85rem 1.1rem;
+      font-size: .9rem; font-family: var(--font-body);
+      color: var(--text); outline: none;
+      transition: border-color var(--transition);
+      appearance: none; -webkit-appearance: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: rgba(201,168,76,.4); }
+    .field input::placeholder, .field textarea::placeholder { color: var(--text-faint); }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .field select option { background: var(--layer); }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold); color: var(--void);
+      padding: .9rem; border-radius: 50px;
+      font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      border: none; cursor: pointer; font-family: var(--font-body);
+      transition: all var(--transition);
+    }
+    .submit-btn:hover { background: var(--gold-light); }
+
+    .success-msg { display: none; text-align: center; padding: 2rem; }
+    .success-msg.show { display: block; }
+    .success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .success-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: .5rem; }
+    .success-sub { font-size: .875rem; color: var(--text-muted); }
+
+    .note { font-size: .8rem; color: var(--text-faint); line-height: 1.65; margin-top: 1.5rem; }
+    .note a { color: var(--gold); text-decoration: none; }
+    footer { background: var(--deep); border-top: 1px solid var(--glass-border); padding: 2rem clamp(1.5rem, 5vw, 4rem); text-align: center; font-size: .78rem; color: var(--text-faint); }
+    footer a { color: var(--text-faint); margin: 0 .65rem; transition: color var(--transition); }
+    footer a:hover { color: var(--text-muted); }
+  </style>
 </head>
 <body>
-  <h1>Data Deletion Instructions</h1>
-  <p>If you would like to delete your data associated with <strong>OutreachLegale Integration</strong>, please contact us at:</p>
-  <p>Email: outreachqdd@gmail.com</p>
-  <p>We will process your request and remove all related data from our systems.</p>
+<nav>
+  <a href="/" class="nav-logo">Outreach<em>Go</em></a>
+  <ul class="nav-links">
+    <li><a href="/offers">Offers</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <div class="kicker">Your Rights</div>
+  <h1>Delete <em>My Data</em></h1>
+  <p class="intro">You have the right to request deletion of any personal data we may have associated with your activity on this site. Submit the form below and we will process your request within 30 days.</p>
+
+  <div class="form-card">
+    <div id="form-area">
+      <div class="field">
+        <label>Request Type</label>
+        <select id="req-type">
+          <option value="delete">Delete all my data</option>
+          <option value="access">Access my data</option>
+          <option value="optout">Opt out of tracking</option>
+          <option value="other">Other inquiry</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Contact Email <span style="color:var(--text-faint)">(so we can confirm)</span></label>
+        <input type="email" id="req-email" placeholder="your@email.com"/>
+      </div>
+      <div class="field">
+        <label>Additional Details <span style="color:var(--text-faint)">(optional)</span></label>
+        <textarea id="req-details" placeholder="Any specific information about your request…"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitRequest()">Submit Request</button>
+      <p class="note">
+        We will acknowledge your request within 72 hours and complete it within 30 days.
+        For more detail on what data we collect, see our <a href="/privacy">Privacy Policy</a>.
+      </p>
+    </div>
+
+    <div class="success-msg" id="success-msg">
+      <div class="success-icon">✅</div>
+      <div class="success-title">Request Received</div>
+      <p class="success-sub">We've logged your data request and will follow up within 72 hours. You can close this page.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/offers">Offers</a>
+  <a href="/privacy">Privacy</a>
+  <a href="/disclosure">Disclosure</a>
+  <br/><br/>© 2025 OutreachGo — outreachgo.net
+</footer>
+
+<script>
+  function submitRequest() {
+    const email = document.getElementById('req-email').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('req-email').style.borderColor = 'rgba(248,113,113,.5)';
+      document.getElementById('req-email').focus();
+      return;
+    }
+    // In production, POST to your endpoint or email handler here
+    // e.g. fetch('/api/data-request', { method: 'POST', body: JSON.stringify({...}) })
+    document.getElementById('form-area').style.display = 'none';
+    document.getElementById('success-msg').classList.add('show');
+  }
+</script>
 </body>
 </html>
